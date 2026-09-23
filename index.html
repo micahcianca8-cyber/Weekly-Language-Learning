@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Weekly Language Rotation</title>
+<meta name="description" content="Serbian / Italian / Mexican Spanish weekly study tracker">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#242219">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Language Rotation">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="header-row">
+      <div class="header-main">
+        <p class="eyebrow">Recurring weekly template — built from your GoSpeakSerbian, Italy Made Easy &amp; Mextalki / Speak Like a Mexican materials</p>
+        <h1>Weekly Language Rotation</h1>
+        <p class="sub">Built around an 8:00 AM–5:00 PM workday with a 1–2 hour lunch. Each day still has one language in the deep-focus seat — Spanish and Serbian (your 2028 fluency targets) get it most often, Italian runs alongside at a steady pace — but every language now gets touched at least every other day, and Spanish/Italian never share a session, since they're close enough to genuinely interfere with each other. Deep-focus blocks are capped at 30–45 minutes and aren't pinned to the evening — see the flex note below.</p>
+        <div class="sync-row">
+          <span id="sync-badge" class="sync-badge mono">Checking…</span>
+          <button id="reset-week-btn" class="reset-btn" type="button">Reset this week</button>
+          <a href="#sync-panel" class="link-btn">Manage sync</a>
+        </div>
+      </div>
+      <div class="streak-badge" title="Consecutive days with at least one study block checked off">
+        <svg class="streak-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8c0-5.39-2.59-10.2-6.5-13.33zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>
+        <span class="streak-num" id="streak-num">0</span>
+        <span class="streak-label">day streak</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="legend">
+    <div class="chip" style="--c:var(--serbian);--cb:var(--serbian-bg)">Serbian</div>
+    <div class="chip" style="--c:var(--italian);--cb:var(--italian-bg)">Italian</div>
+    <div class="chip" style="--c:var(--spanish);--cb:var(--spanish-bg)">Mexican Spanish</div>
+    <div class="chip" style="--c:var(--speak);--cb:var(--speak-bg)">Speak app / class platform</div>
+  </section>
+
+  <section class="flexnote">
+    <span class="ic">FLEX</span>
+    <p><b>Clock times below are starting points, not requirements.</b> Every "deep-focus" block is sized at 30–45 minutes — enough for one lesson plus a few minutes of vocab reinforcement, since most lessons in your catalogs run 5–20 minutes anyway — and it can land wherever actually works that day: early morning before the job starts, the back half of your lunch on a day you get the full 2 hours, or evening. Pick whichever slot is realistic for that day rather than defaulting to "after work" every time.</p>
+  </section>
+
+  <section class="why">
+    <h2>Why it's built this way</h2>
+    <div class="why-grid">
+      <div class="why-item"><span class="n">01</span><p><b>One language per session, always.</b> Spanish and Italian share enough vocabulary and grammar that studying them back to back makes your brain compete between them for the same word. Neither block below ever mixes the two, and their deep-focus days are never adjacent.</p></div>
+      <div class="why-item"><span class="n">02</span><p><b>No language goes silent more than a day or two.</b> A full week of "one language per day" leaves the other two untouched too long — that's where forgetting compounds. Every day now carries a 5-minute keep-warm touch (dashed border below) for a language that isn't today's main focus.</p></div>
+      <div class="why-item"><span class="n">03</span><p><b>New vocab gets reviewed within about a day, not a week.</b> Retention is best when the first review lands roughly 24 hours after first exposure, then a few days later, then weeks later. Lunch reviews lean on Quizlet's Learn / Spaced Practice mode rather than flipping cards front to back, so that timing happens automatically.</p></div>
+      <div class="why-item"><span class="n">04</span><p><b>New material stays blocked; mixed review comes later.</b> A brand-new verb tense or sound is still learned best in a focused block, not jumbled with other topics. Once a few sheets in a language are solid, an occasional mixed-review quiz across them (like GoSpeakSerbian's Review games) is where long-term retention actually gets tested.</p></div>
+      <div class="why-item"><span class="n">05</span><p><b>Sessions sized to what you'll actually do.</b> A schedule that assumes a spare hour every evening gets skipped the first busy week. 30–45 minutes, placeable in whichever window is open that day, is a block you can actually keep.</p></div>
+      <div class="why-item"><span class="n">06</span><p><b>Spread out beats two days in a row, for a goal this long.</b> A 2024 memory-and-cognition study found that for short-term recall, clustering reviews close together wins — but for retention intervals of weeks to months, evenly spaced or widening gaps beat clustered/back-to-back sessions by a wide margin. Since "fluent by 2028" is a multi-year goal, each language stays spread across the week rather than stacked on consecutive days.</p></div>
+    </div>
+  </section>
+
+  <section class="grid" id="week-grid">
+
+    <article class="day" data-day="mon">
+      <h2>Monday <span class="daytag">SPANISH DAY</span></h2>
+      <div class="block spanish"><div class="time">~20 min · AM <label class="chk"><input type="checkbox" data-id="mon-1"><span></span></label></div><div class="what">Speak app — Spanish conversation practice</div></div>
+      <div class="block spanish"><div class="time">~20 min · lunch <label class="chk"><input type="checkbox" data-id="mon-2"><span></span></label></div><div class="what">Quizlet Learn/Spaced Practice on Mexican_Spanish_Vocabulary_Master.xlsx — due cards, not front-to-back</div></div>
+      <div class="block serbian light"><div class="time">+5 min <label class="chk"><input type="checkbox" data-id="mon-4"><span></span></label></div><div class="what">Serbian keep-warm: flip one recent set, recognition only</div></div>
+      <div class="block spanish"><div class="time">30–45 min · flex <label class="chk"><input type="checkbox" data-id="mon-3"><span></span></label></div><div class="what">Next lesson, Mexican_Spanish_Video_Lesson_Catalog.xlsx</div></div>
+    </article>
+
+    <article class="day" data-day="tue">
+      <h2>Tuesday <span class="daytag">SERBIAN DAY</span></h2>
+      <div class="block serbian"><div class="time">~20 min · AM <label class="chk"><input type="checkbox" data-id="tue-1"><span></span></label></div><div class="what">Serbian class platform — speaking practice (24-hr access)</div></div>
+      <div class="block serbian"><div class="time">~20 min · lunch <label class="chk"><input type="checkbox" data-id="tue-2"><span></span></label></div><div class="what">Quizlet Learn/Spaced Practice on Serbian_Vocabulary_Master.xlsx — due cards</div></div>
+      <div class="block italian light"><div class="time">+5 min <label class="chk"><input type="checkbox" data-id="tue-4"><span></span></label></div><div class="what">Italian keep-warm: flip one recent set, recognition only</div></div>
+      <div class="block serbian"><div class="time">30–45 min · flex <label class="chk"><input type="checkbox" data-id="tue-3"><span></span></label></div><div class="what">Next lesson, Serbian_PreIntermediate_Video_Lesson_Catalog.xlsx</div></div>
+    </article>
+
+    <article class="day" data-day="wed">
+      <h2>Wednesday <span class="daytag">ITALIAN DAY</span></h2>
+      <div class="block italian"><div class="time">~20 min · AM <label class="chk"><input type="checkbox" data-id="wed-1"><span></span></label></div><div class="what">Speak app — Italian conversation practice</div></div>
+      <div class="block italian"><div class="time">~20 min · lunch <label class="chk"><input type="checkbox" data-id="wed-2"><span></span></label></div><div class="what">Quizlet Learn/Spaced Practice on Italian_Vocabulary_Master.xlsx — due cards</div></div>
+      <div class="block spanish light"><div class="time">+5 min <label class="chk"><input type="checkbox" data-id="wed-4"><span></span></label></div><div class="what">Spanish keep-warm: flip one recent set, recognition only</div></div>
+      <div class="block italian"><div class="time">30–45 min · flex <label class="chk"><input type="checkbox" data-id="wed-3"><span></span></label></div><div class="what">Next lesson, Italian_Video_Lesson_Catalog.xlsx</div></div>
+    </article>
+
+    <article class="day" data-day="thu">
+      <h2>Thursday <span class="daytag">SPANISH DAY</span></h2>
+      <div class="block spanish"><div class="time">~20 min · AM <label class="chk"><input type="checkbox" data-id="thu-1"><span></span></label></div><div class="what">Speak app — Spanish conversation practice</div></div>
+      <div class="block spanish"><div class="time">~20 min · lunch <label class="chk"><input type="checkbox" data-id="thu-2"><span></span></label></div><div class="what">Quizlet Learn/Spaced Practice on Mexican_Spanish_Vocabulary_Master.xlsx — due cards</div></div>
+      <div class="block serbian light"><div class="time">+5 min <label class="chk"><input type="checkbox" data-id="thu-4"><span></span></label></div><div class="what">Serbian keep-warm: flip one recent set, recognition only</div></div>
+      <div class="block spanish"><div class="time">30–45 min · flex <label class="chk"><input type="checkbox" data-id="thu-3"><span></span></label></div><div class="what">Next lesson, Mexican_Spanish_Video_Lesson_Catalog.xlsx</div></div>
+    </article>
+
+    <article class="day" data-day="fri">
+      <h2>Friday <span class="daytag">SERBIAN DAY</span></h2>
+      <div class="block serbian"><div class="time">~20 min · AM <label class="chk"><input type="checkbox" data-id="fri-1"><span></span></label></div><div class="what">Serbian class platform — speaking practice</div></div>
+      <div class="block serbian"><div class="time">~20 min · lunch <label class="chk"><input type="checkbox" data-id="fri-2"><span></span></label></div><div class="what">Quizlet Learn/Spaced Practice on Serbian_Vocabulary_Master.xlsx — due cards</div></div>
+      <div class="block italian light"><div class="time">+5 min <label class="chk"><input type="checkbox" data-id="fri-4"><span></span></label></div><div class="what">Italian keep-warm: flip one recent set, recognition only</div></div>
+      <div class="block serbian"><div class="time">30–45 min · flex <label class="chk"><input type="checkbox" data-id="fri-3"><span></span></label></div><div class="what">Next lesson, Serbian_PreIntermediate_Video_Lesson_Catalog.xlsx — take that unit's Quiz once its lessons are done</div></div>
+    </article>
+
+    <article class="day" data-day="sat">
+      <h2>Saturday <span class="daytag">SPANISH — CATCH-UP</span></h2>
+      <div class="block spanish"><div class="time">45–60 min · flex <label class="chk"><input type="checkbox" data-id="sat-1"><span></span></label></div><div class="what">1–2 lessons, Mexican_Spanish_Video_Lesson_Catalog.xlsx + matching vocab sheets — however far you get</div></div>
+      <div class="block spanish"><div class="time">Anytime <label class="chk"><input type="checkbox" data-id="sat-2"><span></span></label></div><div class="what">Speak app — free-form Spanish conversation, no script</div></div>
+      <div class="block italian light"><div class="time">+5 min <label class="chk"><input type="checkbox" data-id="sat-3"><span></span></label></div><div class="what">Italian keep-warm: flip one recent set, recognition only</div></div>
+      <div class="block rest"><div class="time">Otherwise</div><div class="what">Open — errands, job sites, life. No evening block.</div></div>
+    </article>
+
+    <article class="day" data-day="sun">
+      <h2>Sunday <span class="daytag">ITALIAN + REVIEW</span></h2>
+      <div class="block italian"><div class="time">30–45 min · flex <label class="chk"><input type="checkbox" data-id="sun-1"><span></span></label></div><div class="what">1 lesson, Italian_Video_Lesson_Catalog.xlsx + matching vocab sheet</div></div>
+      <div class="block serbian light"><div class="time">~15 min · PM <label class="chk"><input type="checkbox" data-id="sun-2"><span></span></label></div><div class="what">Serbian keep-warm: reread the week's worksheet, no new material</div></div>
+      <div class="block rest"><div class="time">Ongoing</div><div class="what">Immersion listening keeps running in the background (your Serbian/Spanish/Italian music mix) — no action needed</div></div>
+    </article>
+
+  </section>
+
+  <section class="tracker">
+    <h2>Where you're at</h2>
+    <p>A running note of your actual position in each language — update it whenever you finish a lesson or notice your app progress has moved. It saves automatically as you type.</p>
+    <div class="pace-cols">
+      <div class="pace-col spanish">
+        <h3>Mexican Spanish</h3>
+        <label class="field-label">Video lesson catalog — currently on</label>
+        <input type="text" class="track-input" data-lang="spanish" data-field="video" placeholder="e.g. MF.12 — Ordering food">
+        <label class="field-label">Speak app</label>
+        <input type="text" class="track-input" data-lang="spanish" data-field="app" placeholder="e.g. Level 4, unit 6">
+        <label class="field-label">Notes</label>
+        <textarea class="track-input" rows="2" data-lang="spanish" data-field="notes" placeholder="anything to remember for next time"></textarea>
+        <p class="track-saved" data-lang="spanish">Not saved yet</p>
+      </div>
+      <div class="pace-col italian">
+        <h3>Italian</h3>
+        <label class="field-label">Video lesson catalog — currently on</label>
+        <input type="text" class="track-input" data-lang="italian" data-field="video" placeholder="e.g. F.9 — Past tense">
+        <label class="field-label">Speak app</label>
+        <input type="text" class="track-input" data-lang="italian" data-field="app" placeholder="e.g. Level 2, unit 3">
+        <label class="field-label">Notes</label>
+        <textarea class="track-input" rows="2" data-lang="italian" data-field="notes" placeholder="anything to remember for next time"></textarea>
+        <p class="track-saved" data-lang="italian">Not saved yet</p>
+      </div>
+      <div class="pace-col serbian">
+        <h3>Serbian</h3>
+        <label class="field-label">Video lesson catalog — currently on</label>
+        <input type="text" class="track-input" data-lang="serbian" data-field="video" placeholder="e.g. Unit 3.2 — Cases">
+        <label class="field-label">Class platform</label>
+        <input type="text" class="track-input" data-lang="serbian" data-field="app" placeholder="e.g. Pre-Intermediate, 15% complete">
+        <label class="field-label">Notes</label>
+        <textarea class="track-input" rows="2" data-lang="serbian" data-field="notes" placeholder="anything to remember for next time"></textarea>
+        <p class="track-saved" data-lang="serbian">Not saved yet</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pacing">
+    <h2>How the rotation moves forward</h2>
+    <p>The video catalogs are finite lists, worked top to bottom in the order they're sorted — <span class="mono">Unit</span> column, then <span class="mono">#</span> column. Each evening block is simply "the next row you haven't checked off yet." Log which row you're on in the tracker above — it saves for you automatically.</p>
+    <div class="pace-cols">
+      <div class="pace-col spanish">
+        <h3>Mexican Spanish</h3>
+        <p>48 lessons, 3 sessions/week (Mon, Thu, Sat) → about <b>16 weeks</b> to clear the catalog once. Start at <span class="mono">MF.1</span> (Mextalki Foundations), finish at <span class="mono">SV.5</span> (Speak Like a Mexican bonus verbs).</p>
+      </div>
+      <div class="pace-col italian">
+        <h3>Italian</h3>
+        <p>32 lessons, 2 sessions/week (Wed, Sun) → about <b>16 weeks</b> to clear the catalog once. Start at <span class="mono">F.1</span> (Foundations), finish at <span class="mono">F2.5</span> — save the 6-hour Bonus compilation for occasional background listening, not a scheduled slot.</p>
+      </div>
+      <div class="pace-col serbian">
+        <h3>Serbian</h3>
+        <p>Beginner course (36 lessons) is 100% complete. Now working the Pre-Intermediate course (48 video lessons, already 7% in) — 2 sessions/week (Tue, Fri) → about <b>24 weeks</b> to clear it. Start at <span class="mono">I.1</span> (Cyrillic Alphabet), finish at <span class="mono">9.3</span> (Vocabulary Revision). Take each unit's built-in Quiz right after finishing that unit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="monthly">
+    <h2>End-of-month review <span class="due">— swap one flex slot in the last week of each month for this, per language</span></h2>
+    <p>New material stays in focused single-language blocks all month (see reason 04 above) — but once a month, cumulative and mixed review is exactly where the actual long-term retention gets tested. Swap that week's usual flex-lesson slot for the checklist below instead of a new lesson; same 30–45 min budget.</p>
+    <div class="monthly-actions">
+      <button id="reset-month-btn" class="reset-btn" type="button">Reset month</button>
+    </div>
+    <div class="pace-cols">
+      <div class="pace-col spanish">
+        <h3>Mexican Spanish</h3>
+        <ul class="review-list">
+          <li><label class="chk"><input type="checkbox" data-scope="month" data-id="review-es-1"><span></span></label><span class="rtext">Quizlet: mixed review across every set studied this month — shuffle several sets together, not Learn mode on just one</span></li>
+          <li><label class="chk"><input type="checkbox" data-scope="month" data-id="review-es-2"><span></span></label><span class="rtext">Re-watch the one lesson from this month that felt hardest, no subtitles this time</span></li>
+          <li><label class="chk"><input type="checkbox" data-scope="month" data-id="review-es-3"><span></span></label><span class="rtext">Check your row in Mexican_Spanish_Video_Lesson_Catalog.xlsx against the ~16-week pace — note if you're ahead or behind</span></li>
+          <li><label class="chk"><input type="checkbox" data-scope="month" data-id="review-es-4"><span></span></label><span class="rtext">Speak app: one unscripted conversation, no notes open</span></li>
+        </ul>
+      </div>
+      <div class="pace-col italian">
+        <h3>Italian</h3>
+        <ul class="review-list">
+          <li><label class="chk"><input type="checkbox" data-scope="month" data-id="review-it-1"><span></span></label><span class="rtext">Quizlet: mixed review across every set studied this month — shuffle several sets together, not Learn mode on just one</span></li>
+          <li><label class="chk"><input type="checkbox" data-scope="month" data-id="review-it-2"><span></span></label><span class="rtext">Re-watch the one lesson from this month that felt hardest, no subtitles this time</span></li>
+          <li><label class="chk"><input type="checkbox" data-scope="month" data-id="review-it-3"><span></span></label><span class="rtext">Check your row in Italian_Video_Lesson_Catalog.xlsx against the ~16-week pace — note if you're ahead or behind</span></li>
+          <li><label class="chk"><input type="checkbox" data-scope="month" data-id="review-it-4"><span></span></label><span class="rtext">Speak app: one unscripted conversation, no notes open</span></li>
+        </ul>
+      </div>
+      <div class="pace-col serbian">
+        <h3>Serbian</h3>
+        <ul class="review-list">
+          <li><label class="chk"><input type="checkbox" data-scope="month" data-id="review-sr-1"><span></span></label><span class="rtext">Mixed review across every vocab set studied this month, shuffled together</span></li>
+          <li><label class="chk"><input type="checkbox" data-scope="month" data-id="review-sr-2"><span></span></label><span class="rtext">Retake any unit Quiz from this month you haven't already passed on the course platform</span></li>
+          <li><label class="chk"><input type="checkbox" data-scope="month" data-id="review-sr-3"><span></span></label><span class="rtext">Check your row in Serbian_PreIntermediate_Video_Lesson_Catalog.xlsx against the ~24-week pace — note if you're ahead or behind</span></li>
+          <li><label class="chk"><input type="checkbox" data-scope="month" data-id="review-sr-4"><span></span></label><span class="rtext">Class platform: one unscripted conversation, no notes open</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sync-panel" id="sync-panel">
+    <h2>Sync between devices <span class="due" id="sync-status">Checking…</span></h2>
+    <p>Everything on this page is saved in this browser automatically — that alone is enough if you only ever use it on your phone. To see the same checks, notes and streak on your desktop too, connect a private GitHub Gist below. Your data then lives in a Gist only reachable with your token, synced straight from this page to GitHub's API — nothing passes through any other server, including Claude.</p>
+
+    <div id="sync-disconnected">
+      <label class="field-label">GitHub personal access token (fine-grained, "Gists: read and write" only)</label>
+      <input type="password" class="track-input" id="gh-token" placeholder="github_pat_… or ghp_…" autocomplete="off">
+      <label class="field-label">Gist ID — leave blank on your first device, it'll create one for you</label>
+      <input type="text" class="track-input" id="gh-gistid" placeholder="leave blank to create a new one">
+      <div class="sync-actions">
+        <button class="reset-btn" id="gh-connect-btn" type="button">Connect</button>
+      </div>
+    </div>
+
+    <div id="sync-connected" hidden>
+      <div class="gistid-box">
+        <span class="field-label" style="margin:0;">Gist ID:</span>
+        <code id="gh-gistid-display"></code>
+        <button class="reset-btn" id="gh-copy-btn" type="button">Copy</button>
+      </div>
+      <p style="margin-top:8px;">Paste this same Gist ID, plus the same token, into the app on your other device to link them together.</p>
+      <div class="sync-actions">
+        <button class="reset-btn" id="gh-sync-now-btn" type="button">Sync now</button>
+        <button class="reset-btn" id="gh-disconnect-btn" type="button">Disconnect this device</button>
+      </div>
+    </div>
+
+    <p class="sync-msg" id="sync-msg"></p>
+
+    <div class="privacy-note">
+      <b>Worth knowing:</b> a "secret" Gist isn't access-controlled — it just isn't listed on your GitHub profile or search. Anyone who somehow got the exact Gist ID could view it. That's a low-stakes tradeoff for a study checklist, but don't paste anything sensitive into the Notes fields above, and don't share the Gist ID or link with anyone. You can revoke the token any time from github.com → Settings → Developer settings → Personal access tokens.
+    </div>
+  </section>
+
+  <section class="materials">
+    <h2>Materials key</h2>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>File</th><th>What's in it</th><th>Used in</th></tr>
+      <tr><td class="file">Serbian_Vocabulary_Master.xlsx</td><td>601 terms across 10 sets + study guide (Beginner-level)</td><td>Tue/Fri lunch, Mon/Thu/Sun keep-warm</td></tr>
+      <tr><td class="file">GoSpeakSerbian_Video_Lesson_Catalog.xlsx</td><td>36 lessons, Beginner course — 100% complete</td><td>Reference only now — course finished</td></tr>
+      <tr><td class="file">Serbian_PreIntermediate_Video_Lesson_Catalog.xlsx</td><td>48 lessons, Pre-Intermediate course — in progress</td><td>Tue/Fri evening blocks</td></tr>
+      <tr><td class="file">Italian_Vocabulary_Master.xlsx</td><td>318 terms across 15 sheets (italymadeeasy)</td><td>Wed lunch, Sun morning, Tue/Fri/Sat keep-warm</td></tr>
+      <tr><td class="file">Italian_Video_Lesson_Catalog.xlsx</td><td>32 lessons, Italy Made Easy Beginner Course</td><td>Wed &amp; Sun blocks</td></tr>
+      <tr><td class="file">Mexican_Spanish_Vocabulary_Master.xlsx</td><td>1,723 terms across 23 sheets (Quizlet, comprehensive)</td><td>Mon/Thu/Sat lunch, Wed keep-warm</td></tr>
+      <tr><td class="file">Mexican_Spanish_Video_Lesson_Catalog.xlsx</td><td>48 lessons, Mextalki + Speak Like a Mexican</td><td>Mon/Thu/Sat blocks</td></tr>
+    </table>
+    </div>
+  </section>
+
+  <section class="notes">
+    <h2>Notes</h2>
+    <ul>
+      <li><b>Serbian's next step, resolved:</b> you're already enrolled in and partway through Go Speak Serbian's Pre-Intermediate course on their platform. Tue/Fri work through it directly. Its vocabulary isn't in Serbian_Vocabulary_Master.xlsx yet (that workbook only covers Beginner-level terms).</li>
+      <li><b>Speak app scope:</b> scheduled only on Italian/Spanish days, matching how you actually use it. Serbian's speaking reps stay on your Serbian class platform per its own 24-hr access.</li>
+      <li><b>Why Italian stays deliberately lighter:</b> Spanish and Italian are both still beginner-level and share a lot of vocabulary — two closely-related languages pushed at equal intensity from scratch is the combination most likely to cause mix-ups. Spanish keeps 3 deep sessions/week toward its 2028 fluency goal; Italian holds at 2 plus keep-warm touches rather than racing to match it.</li>
+      <li><b>Lunch blocks are flexible:</b> your lunch runs 1–2 hours; the review plus keep-warm flip is meant to fit inside whichever length that day turns out to be, not to claim the whole break.</li>
+      <li><b>Everything here saves to this browser automatically,</b> and — once you connect a Gist above — to GitHub too, so it follows you between phone and desktop. Tap <b>Reset this week</b> each Monday to clear last week's daily checks, and <b>Reset month</b> after you finish the end-of-month review; neither one touches your streak, which is tracked separately.</li>
+      <li><b>Streak counter, top right:</b> counts consecutive calendar days with at least one block checked off, anywhere on the page. It only adds credit when you check a box on — unchecking a mis-click doesn't cost you the day.</li>
+      <li><b>Using this on your iPhone like an app:</b> open the GitHub Pages link in Safari, tap the Share icon, then "Add to Home Screen." It launches full-screen with its own icon and no browser bar.</li>
+    </ul>
+  </section>
+
+  <footer>Weekly template — reset and reused every week, not tied to specific calendar dates. Source on GitHub — feel free to edit it.</footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
